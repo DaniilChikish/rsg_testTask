@@ -8,6 +8,7 @@ namespace Content.Features.StorageModule.Scripts {
         public ItemType ItemType;
         public string Name;
         public Sprite Icon;
-        public int Price;
-    }
+        public int Price; //TO DO: make float 
+        public float Weight;
+    } // TO DO: make properties instead of public fields 
 }
