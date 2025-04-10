@@ -27,7 +27,7 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
             _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
-            _entityContext.Storage = _storageFactory.GetStorage();
+            _entityContext.Storage = _storageFactory.GetStorage(_entityType);
             
             SetDefaultBehaviour();
         }
