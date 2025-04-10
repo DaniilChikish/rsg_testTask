@@ -7,7 +7,7 @@ namespace Content.Features.StorageModule.Scripts
     public abstract class BaseEntityStorage : IStorage
     {
         private StorageConfiguration _storageConfiguration;
-        private bool _dirty;
+        private bool _dirty = true;
         private float _allocatedSpace;
 
         public event Action<Item> OnItemAdded;
