@@ -8,11 +8,13 @@ namespace Content.Features.StorageModule.Scripts {
         public List<Item> GetAllItems();
     
         public void AddItem(Item item);
-        public void AddItems(List<Item> items);
+        public void AddItems(IEnumerable<Item> items);
 
         public void RemoveItem(Item item);
         public void RemoveItems(List<Item> items);
 
         public void RemoveAllItems();
+        bool IsEnoughSpace(Item item);
+        bool IsEnoughSpace(IEnumerable<Item> items);
     }
 }
