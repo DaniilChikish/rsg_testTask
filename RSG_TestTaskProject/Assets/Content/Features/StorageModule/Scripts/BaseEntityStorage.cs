@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 
 namespace Content.Features.StorageModule.Scripts
 {
@@ -34,7 +33,7 @@ namespace Content.Features.StorageModule.Scripts
             return (_allocatedSpace + CalculateWeight(items) <= _storageConfiguration.StorageCapacity);
         }
 
-        private void TryRecalculateSpace()
+        protected void TryRecalculateSpace()
         {
             if (_dirty)
             {

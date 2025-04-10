@@ -12,6 +12,7 @@ namespace Content.Features.StorageModule.Scripts
         public PlayerEntityStorage(StorageConfiguration storageConfiguration, PlayerStorageModel storageModel) : base(storageConfiguration)
         {
             _storageModel = storageModel;
+            TryRecalculateSpace();
         }
     }
 }
