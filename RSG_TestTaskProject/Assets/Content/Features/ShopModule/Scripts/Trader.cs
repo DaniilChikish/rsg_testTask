@@ -7,6 +7,7 @@ namespace Content.Features.ShopModule.Scripts {
     public class Trader : MonoBehaviour {
         public int SellAllItemsFromStorage(IStorage storage) {
             int sumOfMoney = 0;
+
             foreach (int price in storage.GetAllItems().Select(item => item.Price))
                 sumOfMoney += price;
 
@@ -21,7 +22,7 @@ namespace Content.Features.ShopModule.Scripts {
             return item.Price;
         }
 
-        public int SellItemsFromStorage(List<Item> items, IStorage storage) {
+        public int SellItemsFromStorage(IEnumerable<Item> items, IStorage storage) {
             storage.RemoveItems(items);
 
             int sumOfMoney = 0;

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 namespace Global.Scripts.Generated { 
     public static class Address { 
         public static List<string> AllKeys = new() {
+            "StorageConfiguration_Default",
             "InteractConfiguration",
             "EntitiesConfiguration_Default",
             "ItemsConfiguration_Default",
             "GamePrefabsConfiguration",
-            "StorageConfiguration_Default",
             "BootstrapScene",
             "GlobalScene",
             "SurfaceScene",
@@ -18,19 +18,20 @@ namespace Global.Scripts.Generated {
             "Book",
             "PlayerCamera",
             "Seller",
+            "HUD",
         }; 
         public static class Configurations { 
+            public const System.String StorageConfiguration_Default = "StorageConfiguration_Default"; 
             public const System.String InteractConfiguration = "InteractConfiguration"; 
             public const System.String EntitiesConfiguration_Default = "EntitiesConfiguration_Default"; 
             public const System.String ItemsConfiguration_Default = "ItemsConfiguration_Default"; 
             public const System.String GamePrefabsConfiguration = "GamePrefabsConfiguration"; 
-            public const System.String StorageConfiguration_Default = "StorageConfiguration_Default"; 
             public static List<string> AllKeys = new() {
+                "StorageConfiguration_Default",
                 "InteractConfiguration",
                 "EntitiesConfiguration_Default",
                 "ItemsConfiguration_Default",
                 "GamePrefabsConfiguration",
-                "StorageConfiguration_Default",
             }; 
         } 
 
@@ -54,6 +55,7 @@ namespace Global.Scripts.Generated {
             public const System.String Book = "Book"; 
             public const System.String PlayerCamera = "PlayerCamera"; 
             public const System.String Seller = "Seller"; 
+            public const System.String HUD = "HUD"; 
             public static List<string> AllKeys = new() {
                 "Player",
                 "Potion",
@@ -61,6 +63,7 @@ namespace Global.Scripts.Generated {
                 "Book",
                 "PlayerCamera",
                 "Seller",
+                "HUD",
             }; 
         } 
 

@@ -18,7 +18,7 @@ namespace Content.Features.LootModule.Scripts {
         private void Start() {
             GameObject playerPrefab = _prefabsFactory.Create(Address.Prefabs.Player, transform.position);
             playerPrefab.transform.position = transform.position;
-            _playerEntityModel.PlayerEntity = playerPrefab.GetComponent<IEntity>();
+            _playerEntityModel.PlayerEntity = playerPrefab.GetComponent<IObservableEntity>();
             _prefabsFactory.Create(Address.Prefabs.PlayerCamera);
         }
     }

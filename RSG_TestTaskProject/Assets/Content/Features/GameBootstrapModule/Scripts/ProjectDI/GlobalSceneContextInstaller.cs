@@ -7,6 +7,7 @@ using Content.Features.PlayerData.Scripts;
 using Content.Features.PrefabSpawner;
 using UnityEngine;
 using Zenject;
+using Content.Features.HUDModule;
 
 namespace Content.Features.GameBootstrapModule.Scripts.ProjectDI {
     [CreateAssetMenu(menuName = "Configurations/GameBootstrap/" + nameof(GlobalSceneContextInstaller),
@@ -20,6 +21,7 @@ namespace Content.Features.GameBootstrapModule.Scripts.ProjectDI {
             InteractionSystemInstaller.Install(Container);
             AIInstaller.Install(Container);
             LootInstaller.Install(Container);
+            HUDInstaller.Install(Container);
         }
     }
 }

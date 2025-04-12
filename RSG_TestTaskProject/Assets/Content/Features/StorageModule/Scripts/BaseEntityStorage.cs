@@ -77,7 +77,7 @@ namespace Content.Features.StorageModule.Scripts
             OnItemRemoved?.Invoke(item);
         }
 
-        public void RemoveItems(List<Item> items)
+        public void RemoveItems(IEnumerable<Item> items)
         {
             _dirty = true;
             foreach (Item item in new List<Item>(items))
