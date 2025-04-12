@@ -15,12 +15,14 @@ namespace Content.Features.AIModule.Scripts.Entity {
         private IEntityDataService _entityDataService;
         private IStorageFactory _storageFactory;
         private IEntityBehaviourFactory _entityBehaviourFactory;
+        public int ID => this.GetInstanceID();
 
         public EntityData EntityData => _entityContext.EntityData;
 
         public IDamageable Damageable => _entityContext.EntityDamageable;
 
         public IStorage Storage => _entityContext.Storage;
+
 
         [Inject]
         public void InjectDependencies(IEntityDataService entityDataService, IStorageFactory storageFactory, IEntityBehaviourFactory entityBehaviourFactory) {
@@ -33,7 +35,7 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _entityContext.Entity = this;
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
-            _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
+            _entityContext.EntityDamageable.Initialize(ID, _entityContext.EntityData.StartHealth);
             _entityContext.Storage = _storageFactory.GetStorage(_entityType);
         }
         private void Start() 

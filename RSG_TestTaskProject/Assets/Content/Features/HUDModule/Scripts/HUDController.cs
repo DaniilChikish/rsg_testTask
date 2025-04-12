@@ -11,6 +11,7 @@ namespace Content.Features.HUDModule
     {
         private HUDView _hudView;
         private PlayerEntityModel _playerEntityModel;
+        private IPlayerStorage _playerStorage;
 
         public HUDController(PlayerEntityModel playerEntityModel)
         {
@@ -24,10 +25,24 @@ namespace Content.Features.HUDModule
         }
 
         private void SetupPlayerView()
-        {
-            _playerEntityModel.PlayerEntity.Storage.OnItemAdded += OnAddItem;
-            _playerEntityModel.PlayerEntity.Storage.OnItemRemoved += OnRemoveItem;
+        {       
+            _playerStorage = _playerEntityModel.PlayerEntity.Storage as IPlayerStorage;
+            
+            _playerEntityModel.PlayerEntity.Damageable.OnHPChanged += OnHPChanged;
+
+            _playerStorage.OnItemAdded += OnAddItem;
+            _playerStorage.OnItemRemoved += OnRemoveItem;
             _hudView.UpdateInventory(DestinctInventory(_playerEntityModel.PlayerEntity.Storage.GetAllItems()));
+
+            _playerStorage.OnGoldAdded += OnAddGold;
+            _playerStorage.OnGoldRemoved += OnRemoveGold;
+
+            _hudView.UpdateGoldCount(_playerStorage.Gold);
+        }
+
+        private void OnHPChanged()
+        {
+            _hudView.SetPlayerHp(_playerEntityModel.PlayerEntity.Damageable.HealthPoint, _playerEntityModel.PlayerEntity.Damageable.MaxHealthPoint);
         }
 
         private IEnumerable<KeyValuePair<Item, int>> DestinctInventory(List<Item> items)
@@ -64,6 +79,21 @@ namespace Content.Features.HUDModule
         internal void OnItemClick(Item item)
         {
             Debug.Log("Click on " + item.Name);
+            if (item.Name == "Potion")
+            {
+                _playerEntityModel.PlayerEntity.Damageable.RestoreHealth(20);
+                _playerEntityModel.PlayerEntity.Storage.RemoveItem(item);
+            }
+        }
+
+        private void OnAddGold()
+        {
+            _hudView.UpdateGoldCount(_playerStorage.Gold);
+        }
+
+        private void OnRemoveGold()
+        {
+            _hudView.UpdateGoldCount(_playerStorage.Gold);
         }
     }
 }

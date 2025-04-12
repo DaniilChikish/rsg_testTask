@@ -1,6 +1,7 @@
 ﻿using Content.Features.StorageModule.Scripts;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,7 @@ namespace Content.Features.HUDModule
         [SerializeField] private SliderBarUIElement hpBar;
         [SerializeField] private Transform _inventoryContainer;
         [SerializeField] private GameObject _inventoryCellPrefab;
+        [SerializeField] private TextMeshProUGUI _goldCount;
         private HUDController _controller;
         private Dictionary<string, ItemCellElement> _instants = new();
         private DiContainer _diContainer;
@@ -36,23 +38,18 @@ namespace Content.Features.HUDModule
         public void UpdateInventory(IEnumerable<KeyValuePair<Item, int>> storageItems)
         {
             var deprecatedItems = _instants.Where(x => !storageItems.Any(y => x.Key == y.Key.Name)).Select(x => x.Value).ToList();
-            foreach (var item in deprecatedItems)
+            foreach (var item in _instants)
             {
-                Destroy(item.gameObject);
+                Destroy(item.Value.gameObject);
             }
+            _instants.Clear();
             foreach (var item in storageItems)
             {
-                if (_instants.ContainsKey(item.Key.Name))
-                {
-                    _instants[item.Key.Name].SetCount(item.Value);
-                }
-                else
-                {
-                    var newItem = _diContainer.InstantiatePrefabForComponent<ItemCellElement>(_inventoryCellPrefab, _inventoryContainer);
-                    newItem.Setup(item.Key.Icon, item.Value, () => _controller.OnItemClick(item.Key));
-                    _instants.Add(item.Key.Name, newItem);
-                }
+                var newItem = _diContainer.InstantiatePrefabForComponent<ItemCellElement>(_inventoryCellPrefab, _inventoryContainer);
+                newItem.Setup(item.Key.Icon, item.Value, () => _controller.OnItemClick(item.Key));
+                _instants.Add(item.Key.Name, newItem);
             }
         }
+        public void UpdateGoldCount(int  count) { _goldCount.text = count.ToString(); }
     }
 }
