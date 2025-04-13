@@ -2,29 +2,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace Utility
 {
     /// <summary>
-    /// Класс контейнер для сериализации пар ключ-значение
+    /// Класс контейнер для серіалізації пар ключ-значення
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     [Serializable]
     public class SerializableDictionary<TKey, TValue>
     {
-        [SerializeField, JsonProperty("keyValues")] private List<SerializedPair<TKey, TValue>> _keyValues = new List<SerializedPair<TKey, TValue>>();
+        [SerializeField, ] private List<SerializedPair<TKey, TValue>> _keyValues = new List<SerializedPair<TKey, TValue>>();
 
         public TValue this[TKey key] { get => _keyValues.Find(x => x.Key.Equals(key)).Value; set => _keyValues.Find(x => x.Key.Equals(key)).Value = value; }
 
-        [JsonIgnore]
         public ICollection<TKey> Keys => _keyValues.Select(x => x.Key).ToList();
 
-        [JsonIgnore]
         public ICollection<TValue> Values => _keyValues.Select(x => x.Value).ToList();
 
-        [JsonIgnore]
         public bool IsReadOnly => true;
 
         public SerializableDictionary()
