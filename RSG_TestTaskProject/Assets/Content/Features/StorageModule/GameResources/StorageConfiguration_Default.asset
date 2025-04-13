@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a615192140e0dc4eb15746dd15805ee, type: 3}
   m_Name: StorageConfiguration_Default
   m_EditorClassIdentifier: 
-  <StorageCapacity>k__BackingField: 10
+  <StorageCapacity>k__BackingField: 25
