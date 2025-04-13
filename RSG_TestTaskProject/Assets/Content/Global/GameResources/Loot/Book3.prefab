@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4347141202714882561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4798070531233404032, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_text
+      value: "\u0398"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798070531233404032, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_fontSize
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798070531233404032, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8741455
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798070531233404032, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798070531233404032, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292804863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049096428690069466, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626824619273099869, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      propertyPath: m_Name
+      value: Book3 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72507e5696a48a14e88643dba674a634, type: 3}

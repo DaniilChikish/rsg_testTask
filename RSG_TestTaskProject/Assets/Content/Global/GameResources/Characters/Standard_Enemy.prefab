@@ -132,6 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c9780d19484d8b91033ff8f43779b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tries: 2
   _lootToSpawn:
-  - {fileID: 8363719149243772793, guid: 8fcc8ae95cbe7d547ba9e5ad187be870, type: 3}
-  - {fileID: 8238402195873183356, guid: 5afb6a1742ca3f241ae220c184c97080, type: 3}
+    _keyValues:
+    - Key: {fileID: 8363719149243772793, guid: 8fcc8ae95cbe7d547ba9e5ad187be870, type: 3}
+      Value: 2
+    - Key: {fileID: 8453178008163054586, guid: 72507e5696a48a14e88643dba674a634, type: 3}
+      Value: 1
+    - Key: {fileID: 5267977331216679419, guid: 44e6344344872bf4c97cc4be3742fd69, type: 3}
+      Value: 1
+    - Key: {fileID: 8238402195873183356, guid: 5afb6a1742ca3f241ae220c184c97080, type: 3}
+      Value: 2

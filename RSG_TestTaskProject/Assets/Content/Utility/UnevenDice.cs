@@ -7,19 +7,19 @@ using UnityEngine;
 namespace Utility.Randomizer
 {
     /// <summary>
-    /// Статический класс для реализации алгоритмов выборки случайных элементов из списка заданных значений вероятности.
-    /// Алгоритм "бросание случайного числа на отрезки".
-    /// Берется список значений шансов некоторого набора событий - отрезков. Алгоритмом <see cref="UnityEngine.Random.Range"/> получаем случайное число
-    /// от ноля до суммы всех "длинн отрезков" (значений шансов).
-    /// Проходом по списку находим "отрезок" на который попало сгенерированное случайное число и возвращаем его индекс или ассоциированный с ним обьект(в случае подачи на вход ассоциативного списка).
+    /// Static class for implementing algorithms for selecting random elements from a list of given probability values.
+    /// Algorithm for "throwing a random number on segments".
+    /// A list of probability values ​​for a certain set of events - segments is taken. Using the <see cref="UnityEngine.Random.Range"/> algorithm, we obtain a random number
+    /// from zero to the sum of all "segment lengths" (chance values).
+    /// By traversing the list, we find the "segment" on which the generated random number falls and return its index or the object associated with it (in the case of an associative list being fed to the input).
     /// </summary>
     public static class UnevenDice
     {
         /// <summary>
-        /// Бросание вероятности на отрезки.
+        /// Throwing probabilities on segments.
         /// </summary>
-        /// <param name="chanseList">Список отрезков с вероятностью</param>
-        /// <returns>Индекс отрезка</returns>
+        /// <param name="chanseList">List of segments with probability</param>
+        /// <returns>Segment index</returns>
         public static int Throw(IList<float> chanseList)
         {
             var rand = UnityEngine.Random.Range(0, chanseList.Sum());
@@ -40,10 +40,10 @@ namespace Utility.Randomizer
         }
 
         /// <summary>
-        /// Бросание вероятности на отрезки.
+        /// Throwing probabilities on segments.
         /// </summary>
-        /// <param name="chanseList">Список отрезков с вероятностью</param>
-        /// <returns>Индекс отрезка</returns>
+        /// <param name="chanseList">List of segments with probability</param>
+        /// <returns>Segment index</returns>
         public static int Throw(IList<int> chanseList)
         {
             var rand = UnityEngine.Random.Range(0, chanseList.Sum());
@@ -64,10 +64,10 @@ namespace Utility.Randomizer
         }
 
         /// <summary>
-        /// Бросание вероятности на отрезки.
+        /// Throwing probabilities on segments.
         /// </summary>
-        /// <param name="chanseList">Словарь предмет-вероятность</param>
-        /// <returns>Элемент словаря вероятностей</returns>
+        /// <param name="chanseList">Dictionary subject-probability</param>
+        /// <returns>Probability dictionary element</returns>
         public static KeyValuePair<T, float> Throw<T>(IEnumerable<KeyValuePair<T, float>> chanseDict)
         {
             var rand = UnityEngine.Random.Range(0, chanseDict.Sum(x => x.Value));
@@ -87,10 +87,10 @@ namespace Utility.Randomizer
         }
 
         /// <summary>
-        /// Бросание вероятности на отрезки.
+        /// Throwing probabilities on segments.
         /// </summary>
-        /// <param name="chanseList">Словарь предмет-вероятность</param>
-        /// <returns>Элемент словаря вероятностей</returns>
+        /// <param name="chanseList">Dictionary subject-probability</param>
+        /// <returns>Probability dictionary element</returns>
         public static KeyValuePair<T, int> Throw<T>(IEnumerable<KeyValuePair<T, int>> chanseDict)
         {
             var rand = UnityEngine.Random.Range(0, chanseDict.Sum(x => x.Value));
