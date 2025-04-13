@@ -31,6 +31,12 @@ MonoBehaviour:
     AttackDistance: 5
     InteractDistance: 4
     Speed: 5
+  - EntityType: 4
+    StartHealth: 20
+    Damage: 0
+    AttackDistance: 0
+    InteractDistance: 0
+    Speed: 0
   _defaultEntityData:
     EntityType: 2
     StartHealth: 10
