@@ -5,15 +5,16 @@ using Content.Features.StorageModule.Scripts;
 using UnityEngine;
 
 namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
-    public class SellItemsEntityBehaviour : IEntityBehaviour {
+    public class SellItemsEntityBehaviour : IEntityBehaviour
+    {
         private EntityContext _entityContext;
-        private Trader _trader;
+        private ITrader _trader;
         
         public event Action OnBehaviorEnd;
         public void InitContext(EntityContext entityContext) =>
             _entityContext = entityContext;
         
-        public void SetTrader(Trader trader) =>
+        public void SetTrader(ITrader trader) =>
             _trader = trader;
 
         public void Start() =>
@@ -39,8 +40,7 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
 
         private void SellItems() {
 
-            var forSale = _entityContext.Storage.GetAllItems().Where(x => x.Name != "Potion");
-            (_entityContext.Storage as IPlayerStorage).AddGold(_trader.SellItemsFromStorage(forSale, _entityContext.Storage));
+            _trader.Trade(_entityContext.Storage as IPlayerStorage);
             StopMoving();
             OnBehaviorEnd?.Invoke();
         }
