@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Configurations
   m_GUID: 0ef284813199e1c4fb1dc2a763393a34
   m_SerializeEntries:
+  - m_GUID: 2b120f4ab0c34dc418c2df0207ebcb8e
+    m_Address: StorageConfiguration_Default
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a959e323afe4f0b40a6145127175905c
     m_Address: InteractConfiguration
     m_ReadOnly: 0

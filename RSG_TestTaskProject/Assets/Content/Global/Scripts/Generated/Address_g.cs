@@ -3,29 +3,35 @@ using System.Collections.Generic;
 namespace Global.Scripts.Generated { 
     public static class Address { 
         public static List<string> AllKeys = new() {
+            "StorageConfiguration_Default",
             "InteractConfiguration",
+            "EntitiesConfiguration_Default",
             "ItemsConfiguration_Default",
             "GamePrefabsConfiguration",
-            "EntitiesConfiguration_Default",
             "BootstrapScene",
             "GlobalScene",
             "SurfaceScene",
             "DungeonScene",
             "Player",
+            "Potion",
             "Standard_Enemy",
+            "Book",
             "PlayerCamera",
             "Seller",
+            "HUD",
         }; 
         public static class Configurations { 
+            public const System.String StorageConfiguration_Default = "StorageConfiguration_Default"; 
             public const System.String InteractConfiguration = "InteractConfiguration"; 
+            public const System.String EntitiesConfiguration_Default = "EntitiesConfiguration_Default"; 
             public const System.String ItemsConfiguration_Default = "ItemsConfiguration_Default"; 
             public const System.String GamePrefabsConfiguration = "GamePrefabsConfiguration"; 
-            public const System.String EntitiesConfiguration_Default = "EntitiesConfiguration_Default"; 
             public static List<string> AllKeys = new() {
+                "StorageConfiguration_Default",
                 "InteractConfiguration",
+                "EntitiesConfiguration_Default",
                 "ItemsConfiguration_Default",
                 "GamePrefabsConfiguration",
-                "EntitiesConfiguration_Default",
             }; 
         } 
 
@@ -44,14 +50,20 @@ namespace Global.Scripts.Generated {
 
         public static class Prefabs { 
             public const System.String Player = "Player"; 
+            public const System.String Potion = "Potion"; 
             public const System.String Standard_Enemy = "Standard_Enemy"; 
+            public const System.String Book = "Book"; 
             public const System.String PlayerCamera = "PlayerCamera"; 
             public const System.String Seller = "Seller"; 
+            public const System.String HUD = "HUD"; 
             public static List<string> AllKeys = new() {
                 "Player",
+                "Potion",
                 "Standard_Enemy",
+                "Book",
                 "PlayerCamera",
                 "Seller",
+                "HUD",
             }; 
         } 
 

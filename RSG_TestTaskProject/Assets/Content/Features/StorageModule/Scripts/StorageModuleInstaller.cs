@@ -9,6 +9,11 @@ namespace Content.Features.StorageModule.Scripts {
             Container.Bind<ItemsConfiguration>()
                 .FromScriptableObject(addressablesAssetLoaderService.LoadAsset<ItemsConfiguration>(Address.Configurations.ItemsConfiguration_Default))
                 .AsSingle();
+            Container.Bind<StorageConfiguration>()
+                .FromScriptableObject(addressablesAssetLoaderService.LoadAsset<StorageConfiguration>(Address.Configurations.StorageConfiguration_Default))
+                .AsSingle();
+
+            Container.Bind<PlayerStorageModel>().AsSingle();
 
             Container.Bind<IItemFactory>()
                 .To<ItemFactory>()

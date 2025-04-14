@@ -12,8 +12,10 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
         public void InitContext(EntityContext entityContext) =>
             _entityContext = entityContext;
 
-        public void SetTarget(IDamageable damageable) =>
-            _targetDamageable = damageable;
+        public void SetTarget(IDamageable damageable)
+        {
+                _targetDamageable = damageable;
+        }
         
         public void Start() {
             _entityContext.NavMeshAgent.speed = _entityContext.EntityData.Speed;
@@ -58,7 +60,10 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
             StopMoving();
         }
 
-        private void OnAttackTriggered() =>
-            _targetDamageable.Damage(_entityContext.EntityData.Damage);
+        private void OnAttackTriggered()
+        {
+            if (_targetDamageable.ID != _entityContext.Entity.ID)
+                _targetDamageable.Damage(_entityContext.EntityData.Damage);
+        }
     }
 }

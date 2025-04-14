@@ -2,9 +2,9 @@
 
 namespace Content.Features.AIModule.Scripts.Entity {
     public class PlayerEntityModel {
-        private IEntity _playerEntity;
+        private IObservableEntity _playerEntity;
 
-        public IEntity PlayerEntity {
+        public IObservableEntity PlayerEntity {
             get =>
                 _playerEntity;
             set {
